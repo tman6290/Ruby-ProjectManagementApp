@@ -1,9 +1,6 @@
-<h1>Add New project</h1>
+<h1>Add New Project</h1>
+<br/>
+<%= render 'form', project: @project %>
 
-<%= render "form", project: @project %>
-
-<br>
-
-<div>
-  <%= link_to "Back to projects", projects_path %>
-</div>
+<br/>
+<%= link_to 'Back', projects_path, class:"btn btn-dark" %>
