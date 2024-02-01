@@ -9,6 +9,12 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1 or /projects/1.json
   def show
+  # The existing line to set the current project
+    set_project
+
+  # Fetch the previous and next projects
+    @prev_project = current_user.projects.where("id < ?", @project.id).order(id: :desc).first
+    @next_project = current_user.projects.where("id > ?", @project.id).order(id: :asc).first
   end
 
   # GET /projects/new
